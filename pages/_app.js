@@ -1,10 +1,16 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
-function MyApp({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react";
+import { RecoilRoot } from "recoil";
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <RecoilRoot>
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </RecoilRoot>
+    </SessionProvider>
   );
 }
 

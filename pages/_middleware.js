@@ -13,4 +13,5 @@ export async function middleware(req) {
     if (!session) return NextResponse.redirect(new URL("/home", req.url));
     // If user is authenticated, continue.
   }
+ 
 }

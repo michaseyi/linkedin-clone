@@ -9,7 +9,7 @@ import Head from "next/head";
 import { getProviders, signIn } from "next-auth/react";
 
 function Home({ providers }) {
-  console.log(Object.values(providers));
+ 
   return (
     <div className="space-y-10 relative">
       <Head>
